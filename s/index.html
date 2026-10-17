@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Scheda condivisa · Palestra</title>
+    <meta name="description" content="Una scheda di allenamento condivisa con te su Palestra." />
+    <style>
+      :root {
+        --chalk: #f3f4f2;
+        --iron: #1c2733;
+        --iron-text: #aebbcb;
+        --blue: #1f56d6;
+        --surface: #ffffff;
+        --muted: #5a6573;
+        --border: #d9dde2;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--chalk);
+        color: var(--iron);
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
+      header {
+        background: var(--iron);
+        color: #fff;
+        border-radius: 14px;
+        padding: 20px;
+      }
+      .brand {
+        color: #7fa6f5;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      h1 {
+        margin: 6px 0 0;
+        font-size: 30px;
+        line-height: 1.15;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px;
+        margin-top: 16px;
+      }
+      .code {
+        font-size: 36px;
+        font-weight: 800;
+        letter-spacing: 4px;
+        margin: 4px 0 0;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .button {
+        display: block;
+        text-align: center;
+        background: var(--blue);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 14px 20px;
+        margin-top: 16px;
+        min-height: 48px;
+      }
+      ol {
+        padding-left: 20px;
+        margin: 8px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand">Palestra</div>
+        <h1>Ti hanno condiviso una scheda di allenamento</h1>
+      </header>
+
+      <section class="card" id="with-code" hidden>
+        <div class="muted">Codice della scheda</div>
+        <p class="code" id="code"></p>
+        <a class="button" id="open">Apri in Palestra</a>
+        <p class="muted">
+          Se non si apre: in Palestra vai su Schede → Nuova scheda → "Apri una scheda condivisa" e
+          scrivi il codice.
+        </p>
+      </section>
+
+      <section class="card" id="without-code" hidden>
+        <p>Questo link non contiene un codice valido. Chiedi di condividere di nuovo la scheda.</p>
+      </section>
+
+      <section class="card">
+        <strong>Non hai ancora Palestra?</strong>
+        <p class="muted">
+          L'app che ti dice sempre cosa fare in palestra e ti mostra quanto stai migliorando.
+          Arriverà presto sul Play Store.
+        </p>
+      </section>
+
+      <p class="muted">
+        La scheda contiene solo allenamenti, esercizi, serie e ripetizioni: mai i carichi o i dati
+        di chi l'ha condivisa. Questa pagina non usa cookie né statistiche.
+      </p>
+    </main>
+    <script>
+      // The code is only read and shown here: the plan itself is opened by the app.
+      const ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+      const raw = new URLSearchParams(location.search).get('c') || '';
+      const code = raw.trim().toUpperCase();
+      const valid = code.length === 8 && [...code].every((char) => ALPHABET.includes(char));
+      document.getElementById(valid ? 'with-code' : 'without-code').hidden = false;
+      if (valid) {
+        document.getElementById('code').textContent = code.slice(0, 4) + ' ' + code.slice(4);
+        document.getElementById('open').href =
+          'intent://s?c=' + code + '#Intent;scheme=palestra;package=it.retaggi.palestra;end';
+      }
+    </script>
+  </body>
+</html>
