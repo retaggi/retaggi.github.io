@@ -71,7 +71,8 @@
   --xl: 32px;
   --radius-md: 14px;
   --radius-lg: 20px;
-  --page: 1120px;
+  /* The page runs edge to edge: only the gutter grows with the screen. */
+  --gutter: clamp(16px, 4.5vw, 96px);
 }
 
 /* The gym at night: iron background, chalk text, raised steel for the "now" panels. */
@@ -155,9 +156,7 @@ a {
 }
 
 .wrap {
-  max-width: var(--page);
-  margin: 0 auto;
-  padding: 0 var(--md);
+  padding: 0 var(--gutter);
 }
 
 /* --- Type ------------------------------------------------------------------------------ */
@@ -172,10 +171,12 @@ h3 {
   margin: 0;
 }
 h1 {
-  font-size: clamp(48px, 9vw, 92px);
+  font-size: clamp(56px, 10vw, 280px);
+  line-height: 0.88;
 }
 h2 {
-  font-size: clamp(36px, 5.5vw, 56px);
+  font-size: clamp(40px, 5vw, 88px);
+  line-height: 0.95;
 }
 h3 {
   font-family: var(--display);
@@ -249,6 +250,7 @@ p {
   background: var(--accent-soft);
   color: var(--text);
   font-weight: 600;
+  white-space: nowrap;
   text-decoration: none;
 }
 .pill-action svg {
@@ -260,39 +262,120 @@ p {
 .site-header {
   padding: var(--md) 0;
 }
-.site-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--md);
-}
 .site-header img {
   height: 40px;
   width: auto;
 }
+/* Home: the header floats over the hero, the pill over the iron panel. */
+.site-header.over {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--md);
+  padding: var(--lg) var(--gutter);
+}
 
-/* --- Hero ------------------------------------------------------------------------------ */
+/* --- Hero: the whole first screen, text on chalk and the phone on an iron panel ----------- */
 
 .hero {
-  padding: var(--lg) 0 64px;
-}
-.hero .wrap {
+  position: relative;
   display: grid;
-  gap: 48px;
-  align-items: center;
+  padding: 0;
 }
 .hero-text {
   display: grid;
   gap: var(--lg);
   justify-items: start;
+  align-content: center;
+  padding: 112px var(--gutter) 56px;
+}
+.hero h1 {
+  /* Room for the descender of "palestra" under the tight leading. */
+  padding-bottom: 0.1em;
+}
+.hero h1 span {
+  display: block;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--md) var(--lg);
 }
 .hero-note {
   font-size: 15px;
   color: var(--text-secondary);
 }
-@media (min-width: 900px) {
-  .hero .wrap {
-    grid-template-columns: 1.15fr 0.85fr;
+.hero-stage {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 56px var(--gutter);
+  background: var(--ink);
+}
+/* A weight plate seen from the front, cropped by the panel. */
+.stage-plate {
+  position: absolute;
+  width: max(560px, 120%);
+  right: -45%;
+  bottom: -35%;
+  fill: none;
+  stroke: var(--ink-line);
+  stroke-width: 1.5;
+}
+.hero-stage .phone {
+  position: relative;
+}
+@media (min-width: 1000px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.45fr) minmax(440px, 1fr);
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+  .hero-text {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .hero-stage {
+    padding-top: 112px;
+  }
+}
+/* On big screens the phone grows with the panel. */
+@media (min-width: 1800px) {
+  .hero-stage .phone {
+    zoom: 1.3;
+  }
+}
+@media (min-width: 2400px) {
+  .hero-stage .phone {
+    zoom: 1.55;
+  }
+}
+
+/* One entrance: the headline rises line by line, the phone follows. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 span,
+  .hero-stage .phone {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero h1 span:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+  .hero h1 span:nth-child(3) {
+    animation-delay: 0.16s;
+  }
+  .hero-stage .phone {
+    animation-delay: 0.28s;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
   }
 }
 
@@ -519,28 +602,97 @@ p {
   padding: 18px 0;
 }
 
-/* --- Sections -------------------------------------------------------------------------- */
+/* --- Sections: full-width rows, separated by background rather than boxes ---------------- */
 
 section {
-  padding: 64px 0;
+  padding: clamp(64px, 8vw, 128px) 0;
+}
+section.surface {
+  background: var(--surface);
 }
 .section-head {
   display: grid;
   gap: var(--md);
+  align-content: start;
   margin-bottom: var(--xl);
   max-width: 44em;
 }
+/* Title on the left, content across the rest of the width. */
+@media (min-width: 1100px) {
+  .split {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.75fr) minmax(0, 2fr);
+    gap: clamp(48px, 6vw, 128px);
+    align-items: start;
+  }
+  .split .section-head {
+    position: sticky;
+    top: var(--xl);
+    margin-bottom: 0;
+  }
+}
 
+/* The three steps run across the screen, divided by rules. */
 .steps {
   display: grid;
-  gap: var(--md);
-  counter-reset: step;
   padding: 0;
   margin: 0;
   list-style: none;
+  border-top: 2px solid var(--text);
+}
+.steps li {
+  display: grid;
+  gap: var(--sm);
+  align-content: start;
+  padding: var(--lg) 0 var(--xl);
+}
+.steps li + li {
+  border-top: 1px solid var(--border);
+}
+.steps .muted {
+  max-width: 34em;
 }
 @media (min-width: 820px) {
   .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .steps li {
+    padding: var(--lg) clamp(24px, 3vw, 56px) 0;
+  }
+  .steps li:first-child {
+    padding-left: 0;
+  }
+  .steps li + li {
+    border-top: 0;
+    border-left: 1px solid var(--border);
+  }
+}
+.step-number {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(96px, 10vw, 176px);
+  line-height: 0.85;
+  margin-bottom: var(--md);
+}
+
+.features {
+  display: grid;
+  column-gap: var(--xl);
+}
+.features article {
+  display: grid;
+  gap: var(--sm);
+  align-content: start;
+  padding: var(--lg) 0 var(--xl);
+  border-top: 1px solid var(--border);
+}
+@media (min-width: 640px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .features {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -552,27 +704,6 @@ section {
   display: grid;
   gap: var(--sm);
   align-content: start;
-}
-.step-number {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 64px;
-  line-height: 0.9;
-}
-
-.features {
-  display: grid;
-  gap: var(--md);
-}
-@media (min-width: 640px) {
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 980px) {
-  .features {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 .feature-icon {
   width: 48px;
@@ -596,25 +727,26 @@ section {
 /* --- Progress ---------------------------------------------------------------------------- */
 
 .progress {
-  display: grid;
-  gap: var(--xl);
   align-items: center;
-}
-@media (min-width: 900px) {
-  .progress {
-    grid-template-columns: 0.9fr 1.1fr;
-  }
 }
 .chart-card {
   margin: 0;
   gap: var(--md);
+  padding: clamp(24px, 3vw, 48px);
+}
+@media (min-width: 1100px) {
+  .chart-card {
+    grid-template-columns: 1.3fr 1fr;
+    gap: clamp(32px, 4vw, 64px);
+    align-items: end;
+  }
 }
 .chart {
   position: relative;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   align-items: end;
-  gap: clamp(4px, 1.5vw, 10px);
+  gap: clamp(4px, 1.5vw, 14px);
   height: 240px;
   padding-top: 24px;
 }
@@ -712,7 +844,7 @@ section {
 
 .privacy {
   display: grid;
-  gap: var(--md);
+  column-gap: var(--xl);
   padding: 0;
   margin: 0;
   list-style: none;
@@ -726,6 +858,8 @@ section {
   display: flex;
   gap: var(--md);
   align-items: flex-start;
+  padding: var(--lg) 0;
+  border-top: 1px solid var(--border);
 }
 .privacy svg {
   flex: none;
@@ -738,23 +872,24 @@ section {
 .band {
   background: var(--ink);
   color: var(--on-ink);
-  border-radius: var(--radius-lg);
-  padding: 40px var(--lg);
+}
+.band .wrap {
   display: grid;
   gap: var(--lg);
   justify-items: start;
 }
 .band .muted {
   color: var(--ink-text);
+  max-width: 34em;
 }
 .band-brand {
   display: flex;
   align-items: center;
-  gap: var(--md);
+  gap: var(--lg);
 }
 .band-brand img {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
 }
 @media (max-width: 600px) {
   .band-brand {
@@ -763,10 +898,9 @@ section {
   }
 }
 @media (min-width: 820px) {
-  .band {
+  .band .wrap {
     grid-template-columns: 1fr auto;
     align-items: center;
-    padding: 48px;
   }
 }
 .store {
@@ -789,6 +923,17 @@ section {
 .site-footer .wrap {
   display: grid;
   gap: var(--md);
+}
+@media (min-width: 820px) {
+  .site-footer .wrap {
+    grid-template-columns: auto 1fr;
+    gap: var(--xl);
+    align-items: center;
+  }
+  .site-footer p {
+    justify-self: end;
+    text-align: right;
+  }
 }
 .footer-brand {
   display: flex;
