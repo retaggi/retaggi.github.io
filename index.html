@@ -3,32 +3,374 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Palestrando</title>
-    <style>
-      body {
-        margin: 0;
-        background: #f3f4f2;
-        color: #1c2733;
-        font-family:
-          system-ui,
-          -apple-system,
-          'Segoe UI',
-          Roboto,
-          sans-serif;
-        line-height: 1.5;
-      }
-      main {
-        max-width: 480px;
-        margin: 0 auto;
-        padding: 40px 16px;
-      }
-    </style>
+    <title>Palestrando · Sai sempre cosa fare in palestra</title>
+    <meta
+      name="description"
+      content="L'app di allenamento per chi inizia: la scheda pronta in un minuto, serie, ripetizioni e carico di ogni esercizio, e i pesi che salgono quando è il momento."
+    />
+    <link rel="canonical" href="https://palestrando.it/" />
+    <meta name="theme-color" content="#F3F4F2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121820" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/assets/logo/palestrando-icona.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/icons/palestrando-icona-48.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/icons/palestrando-icona-192.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Palestrando" />
+    <meta property="og:url" content="https://palestrando.it/" />
+    <meta property="og:title" content="Palestrando · Sai sempre cosa fare in palestra" />
+    <meta
+      property="og:description"
+      content="La scheda pronta in un minuto, ogni serie già scritta e i pesi che salgono quando è il momento."
+    />
+    <meta property="og:image" content="https://palestrando.it/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="preload"
+      href="/assets/fonts/big-shoulders-display-800.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/site.css" />
   </head>
   <body>
-    <main>
-      <h1>Palestrando</h1>
-      <p>L'app che ti dice sempre cosa fare in palestra e ti mostra quanto stai migliorando.</p>
-      <p>Arriverà presto sul Play Store.</p>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a href="/" aria-label="Palestrando, pagina iniziale">
+          <picture>
+            <source
+              srcset="/assets/logo/palestrando-logo-orizzontale-scuro.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img
+              src="/assets/logo/palestrando-logo-orizzontale.svg"
+              alt="Palestrando"
+              width="175"
+              height="40"
+            />
+          </picture>
+        </a>
+        <a class="pill-action" href="#come-funziona">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg>
+          Come funziona
+        </a>
+      </div>
+    </header>
+
+    <main id="contenuto">
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-text">
+            <p class="eyebrow">L'app di allenamento per chi inizia</p>
+            <h1>Sai sempre cosa fare in palestra</h1>
+            <p class="lead">
+              E vedi quanto stai migliorando. Palestrando ti prepara la scheda, ti dice serie,
+              ripetizioni e carico di ogni esercizio e alza i pesi quando è il momento.
+            </p>
+            <a class="button" href="#come-funziona">Scopri come funziona</a>
+            <p class="hero-note">Presto su Google Play. Gratis, senza bisogno di un account.</p>
+          </div>
+
+          <div
+            class="phone"
+            role="img"
+            aria-label="La schermata dell'allenamento: Chest press, serie 3 di 4, 10 ripetizioni con 42,5 kg, il coach ha alzato il carico di 2,5 kg, e il pulsante Serie fatta."
+          >
+            <div class="screen" aria-hidden="true">
+              <div class="screen-top">
+                <span class="plate yellow">B</span>
+                <span class="screen-title">Petto, braccia e dorsali</span>
+                <span class="screen-count">9 di 29 serie</span>
+              </div>
+              <div class="segments">
+                <span class="done"></span><span class="now"></span><span></span><span></span
+                ><span></span><span></span>
+              </div>
+              <div class="exercise">
+                <div class="exercise-image">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>
+                </div>
+                <div>
+                  <div class="exercise-name">Chest press</div>
+                  <div class="muted">4 × 10, recupero 1:30</div>
+                </div>
+              </div>
+              <div class="sets">
+                <div class="set done">Serie 1<b>10 × 42,5</b></div>
+                <div class="set done">Serie 2<b>10 × 42,5</b></div>
+                <div class="set now">Serie 3<b>10 × 42,5</b></div>
+                <div class="set">Serie 4<b>10 × 42,5</b></div>
+              </div>
+              <div class="now-panel">
+                <span class="now-label">Serie 3 di 4</span>
+                <div class="hero-numbers">
+                  <span>10<small>rip</small></span>
+                  <span class="times">×</span>
+                  <span>42,5<small>kg</small></span>
+                </div>
+                <p class="coach">Ultima volta tutte le serie: <strong>+2,5 kg</strong></p>
+              </div>
+              <div class="strip"><b>0:48</b> Cronometro</div>
+              <div class="screen-button">Serie fatta</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="come-funziona">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Tre passi, nessun dubbio</h2>
+            <p class="lead">
+              Niente fogli da interpretare né numeri da ricordare: in sala apri l'app e fai quello
+              che c'è scritto.
+            </p>
+          </div>
+          <ol class="steps">
+            <li class="card">
+              <span class="step-number">1</span>
+              <h3>La scheda è pronta in un minuto</h3>
+              <p class="muted">
+                Cinque domande (obiettivo, giorni, tempo, attrezzatura, orario) e ricevi una scheda
+                adatta al tuo livello. Hai già quella dell'istruttore? Fotografala: Palestrando la
+                legge per te, carichi compresi.
+              </p>
+            </li>
+            <li class="card">
+              <span class="step-number">2</span>
+              <h3>In sala, un esercizio alla volta</h3>
+              <p class="muted">
+                Ogni serie ha già ripetizioni e carico: un tocco su "Serie fatta" e parte il
+                recupero. Cronometro e prossima serie restano nella notifica, anche a telefono
+                bloccato.
+              </p>
+            </li>
+            <li class="card">
+              <span class="step-number">3</span>
+              <h3>Il coach alza i carichi</h3>
+              <p class="muted">
+                Hai fatto tutte le serie? La volta dopo il peso sale. Hai faticato? Si ripete. Ogni
+                proposta ha il suo perché, scritto in una riga: alla progressione pensiamo noi.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Pensata per le giornate vere</h2>
+            <p class="lead">
+              Poco tempo, la macchina occupata, un esercizio che non conosci: c'è sempre un modo per
+              allenarti senza perdere i progressi.
+            </p>
+          </div>
+          <div class="features">
+            <article class="card">
+              <div class="feature-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
+              </div>
+              <h3>Poco tempo?</h3>
+              <p class="muted">
+                Una versione ridotta o minima dello stesso allenamento, oppure a casa senza attrezzi.
+                I carichi della palestra restano dove li hai lasciati.
+              </p>
+              <span class="premium-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/></svg>
+                Premium, in arrivo
+              </span>
+            </article>
+            <article class="card">
+              <div class="feature-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>
+              </div>
+              <h3>Macchina occupata</h3>
+              <p class="muted">
+                Sostituisci l'esercizio con uno simile: il carico viene stimato per te e i progressi
+                di entrambi restano intatti.
+              </p>
+              <span class="premium-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/></svg>
+                Premium, in arrivo
+              </span>
+            </article>
+            <article class="card">
+              <div class="feature-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>
+              </div>
+              <h3>Oltre 600 esercizi</h3>
+              <p class="muted">
+                Ognuno con l'immagine, i punti chiave e i muscoli che allena. Li cerchi per muscolo,
+                per nome o per difficoltà, anche a metà allenamento.
+              </p>
+            </article>
+            <article class="card">
+              <div class="feature-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+              </div>
+              <h3>Progressi che si vedono</h3>
+              <p class="muted">
+                Allenamenti della settimana, kg sollevati, record e quanto è salito ogni carico. Con
+                numeri veri, mai con sensi di colpa.
+              </p>
+            </article>
+            <article class="card">
+              <div class="feature-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+              </div>
+              <h3>Un report da mostrare</h3>
+              <p class="muted">
+                Un PDF con costanza, carichi, record ed equilibrio muscolare, da tenere o da portare
+                al tuo istruttore.
+              </p>
+              <span class="premium-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/></svg>
+                Premium, in arrivo
+              </span>
+            </article>
+            <article class="card">
+              <div class="feature-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+              </div>
+              <h3>Condividi la scheda</h3>
+              <p class="muted">
+                Un link o un codice di otto caratteri per passarla a un amico: esercizi, serie e
+                ripetizioni, mai i tuoi carichi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap progress">
+          <div class="section-head">
+            <h2>Vedi quanto stai migliorando</h2>
+            <p class="lead">
+              Ogni settimana sai se hai raggiunto l'obiettivo, e ogni esercizio ti dice da dove sei
+              partito e dove sei arrivato.
+            </p>
+          </div>
+          <figure
+            class="card chart-card"
+            role="img"
+            aria-label="Esempio: allenamenti delle ultime otto settimane con l'obiettivo di 3 a settimana, e i carichi di tre esercizi principali saliti da quando hai iniziato."
+          >
+            <div class="chart" aria-hidden="true">
+              <div class="goal-line"><span class="goal-label">obiettivo: 3</span></div>
+              <div class="bar"><b>2</b><span style="height: 76px"></span>7 lug</div>
+              <div class="bar on"><b>3</b><span style="height: 114px"></span>14 lug</div>
+              <div class="bar on"><b>3</b><span style="height: 114px"></span>21 lug</div>
+              <div class="bar"><b>1</b><span style="height: 38px"></span>28 lug</div>
+              <div class="bar on"><b>4</b><span style="height: 152px"></span>4 ago</div>
+              <div class="bar on"><b>3</b><span style="height: 114px"></span>11 ago</div>
+              <div class="bar"><b>2</b><span style="height: 76px"></span>18 ago</div>
+              <div class="bar current"><b>1</b><span style="height: 38px"></span>25 ago</div>
+            </div>
+            <div class="loads" aria-hidden="true">
+              <div class="load">
+                <span class="plate blue">A</span>
+                <span class="load-name">Panca piana</span>
+                <span class="load-values">40 → 52,5 kg <span class="load-gain">+12,5</span></span>
+              </div>
+              <div class="load">
+                <span class="plate yellow">B</span>
+                <span class="load-name">Lat machine</span>
+                <span class="load-values">30 → 45 kg <span class="load-gain">+15</span></span>
+              </div>
+              <div class="load">
+                <span class="plate green">C</span>
+                <span class="load-name">Leg press</span>
+                <span class="load-values">60 → 90 kg <span class="load-gain">+30</span></span>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>I tuoi dati restano tuoi</h2>
+            <p class="lead">
+              Palestrando funziona anche senza rete e senza account. Quello che non serve non lo
+              raccogliamo.
+            </p>
+          </div>
+          <ul class="privacy">
+            <li class="card">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              <p>
+                <strong>Tutto sul telefono.</strong>
+                <span class="muted">Schede e allenamenti stanno sul tuo telefono e funzionano anche in una palestra senza campo.</span>
+              </p>
+            </li>
+            <li class="card">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              <p>
+                <strong>Backup solo se lo vuoi.</strong>
+                <span class="muted">Entri con Google per ritrovare tutto su un telefono nuovo. Senza, i tuoi allenamenti non finiscono sui nostri server.</span>
+              </p>
+            </li>
+            <li class="card">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              <p>
+                <strong>Corpo e foto con il tuo consenso.</strong>
+                <span class="muted">Peso, misure e foto dei progressi solo se li attivi tu. Le foto non lasciano mai il telefono.</span>
+              </p>
+            </li>
+            <li class="card">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              <p>
+                <strong>Esporti o cancelli quando vuoi.</strong>
+                <span class="muted">Tutti i tuoi dati in un file Excel leggibile, oppure cancellati con un tocco. Statistiche d'uso solo se le accetti.</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="band">
+            <div class="band-brand">
+              <img src="/assets/logo/palestrando-icona.svg" alt="" width="64" height="64" />
+              <div>
+                <h2>Presto su Google Play</h2>
+                <p class="muted">
+                  Gratis per iniziare: scheda, allenamenti, carichi che salgono da soli e guida agli
+                  esercizi.
+                </p>
+              </div>
+            </div>
+            <span class="store">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/></svg>
+              In arrivo per Android
+            </span>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-brand">
+          <img src="/assets/logo/palestrando-icona.svg" alt="" width="28" height="28" />
+          PALESTRANDO
+        </div>
+        <p>
+          © 2026 Palestrando. Questo sito non usa cookie né statistiche. Caratteri
+          <a href="/assets/fonts/OFL-big-shoulders-display.txt">Big Shoulders Display</a> e
+          <a href="/assets/fonts/OFL-barlow.txt">Barlow</a> (SIL Open Font License).
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
