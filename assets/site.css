@@ -266,6 +266,17 @@ p {
   height: 40px;
   width: auto;
 }
+/* Small phones: logo and pill must share 360 px. */
+@media (max-width: 420px) {
+  .site-header.over img {
+    height: 32px;
+  }
+  .site-header.over .pill-action {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 15px;
+  }
+}
 /* Home: the header floats over the hero, the pill over the iron panel. */
 .site-header.over {
   position: absolute;
@@ -295,6 +306,12 @@ p {
 .hero h1 {
   /* Room for the descender of "palestra" under the tight leading. */
   padding-bottom: 0.1em;
+}
+/* Stacked hero (phones, tablets upright): the headline takes the width it has. */
+@media (max-width: 999px) {
+  .hero h1 {
+    font-size: clamp(56px, 15vw, 150px);
+  }
 }
 .hero h1 span {
   display: block;
@@ -523,6 +540,15 @@ p {
   font-family: var(--display);
   font-weight: 700;
   font-size: 16px;
+  white-space: nowrap;
+}
+@media (max-width: 400px) {
+  .set {
+    padding: 6px;
+  }
+  .set b {
+    font-size: 14px;
+  }
 }
 .set.done {
   border-color: var(--success);
@@ -667,6 +693,17 @@ section.surface {
     border-left: 1px solid var(--border);
   }
 }
+/* Tablets upright: number beside the text, so the stacked steps fill the row. */
+@media (min-width: 560px) and (max-width: 819px) {
+  .steps li {
+    grid-template-columns: 112px 1fr;
+    column-gap: var(--lg);
+  }
+  .steps .step-number {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+}
 .step-number {
   font-family: var(--display);
   font-weight: 800;
@@ -732,7 +769,7 @@ section.surface {
 .chart-card {
   margin: 0;
   gap: var(--md);
-  padding: clamp(24px, 3vw, 48px);
+  padding: clamp(16px, 3vw, 48px);
 }
 @media (min-width: 1100px) {
   .chart-card {
