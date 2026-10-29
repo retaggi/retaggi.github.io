@@ -1025,3 +1025,66 @@ section.surface {
 .narrow .button {
   width: 100%;
 }
+
+/* --- Documents (privacy, terms, account deletion) --------------------------------------- */
+
+.doc {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--lg) var(--md) 48px;
+}
+.doc .site-header {
+  padding: 0 0 var(--lg);
+}
+.doc h1 {
+  font-size: clamp(44px, 8vw, 64px);
+  line-height: 0.95;
+}
+.doc h2 {
+  font-size: clamp(30px, 5vw, 38px);
+  margin: 40px 0 var(--sm);
+  scroll-margin-top: var(--md);
+}
+.doc h3 {
+  font-size: 22px;
+  margin: var(--lg) 0 var(--xs);
+}
+.doc p,
+.doc ul,
+.doc ol {
+  margin: 0 0 var(--md);
+}
+.doc ul,
+.doc ol {
+  padding-left: 1.3em;
+}
+.doc li + li {
+  margin-top: var(--xs);
+}
+.doc .lead {
+  margin-top: var(--md);
+}
+.doc .updated {
+  margin-top: var(--sm);
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+.doc .steps-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--md) var(--lg);
+  margin: 0 0 var(--md);
+}
+.doc .steps-box ol {
+  margin: 0;
+}
+.doc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--md);
+  margin-top: 48px;
+  padding-top: var(--md);
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+}
