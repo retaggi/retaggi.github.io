@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://palestrando.it/sitemap.xml

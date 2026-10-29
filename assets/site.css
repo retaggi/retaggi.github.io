@@ -116,7 +116,8 @@ body {
   background: var(--background);
   color: var(--text);
   font-family: var(--body);
-  font-size: 17px;
+  /* 17 px on phones, up to 20 px on wide desktops so the copy keeps pace with the headlines. */
+  font-size: clamp(17px, 0.45vw + 12px, 20px);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -181,20 +182,20 @@ h2 {
 h3 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: 28px;
+  font-size: clamp(26px, 1vw + 14px, 36px);
   line-height: 1.1;
 }
 p {
   margin: 0;
 }
 .lead {
-  font-size: clamp(18px, 2.2vw, 21px);
+  font-size: clamp(18px, 1vw + 10px, 27px);
   color: var(--text-secondary);
   max-width: 36em;
 }
 .eyebrow {
   font-weight: 600;
-  font-size: 15px;
+  font-size: clamp(16px, 0.9vw + 8px, 26px);
   color: var(--text-secondary);
 }
 .muted {
@@ -219,7 +220,7 @@ p {
   color: var(--on-accent);
   font-family: var(--body);
   font-weight: 700;
-  font-size: 19px;
+  font-size: clamp(19px, 0.4vw + 14px, 22px);
   text-decoration: none;
   transition: background-color 0.15s;
 }
@@ -323,7 +324,7 @@ p {
   gap: var(--md) var(--lg);
 }
 .hero-note {
-  font-size: 15px;
+  font-size: clamp(15px, 0.5vw + 9px, 19px);
   color: var(--text-secondary);
 }
 .hero-stage {
@@ -756,9 +757,27 @@ section.surface {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 0.85em;
   font-weight: 600;
   color: var(--text-secondary);
+}
+
+/* Questions of a beginner: two columns of question and answer, divided by rules. */
+.faq {
+  display: grid;
+  column-gap: var(--xl);
+}
+.faq article {
+  display: grid;
+  gap: var(--sm);
+  align-content: start;
+  padding: var(--lg) 0 var(--xl);
+  border-top: 1px solid var(--border);
+}
+@media (min-width: 820px) {
+  .faq {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* --- Progress ---------------------------------------------------------------------------- */
@@ -800,7 +819,7 @@ section.surface {
   position: absolute;
   right: 0;
   transform: translateY(-120%);
-  font-size: 13px;
+  font-size: clamp(13px, 0.3vw + 10px, 16px);
   color: var(--text-secondary);
   background: var(--surface);
   padding-left: 6px;
@@ -809,7 +828,7 @@ section.surface {
   display: grid;
   justify-items: center;
   gap: 4px;
-  font-size: 12px;
+  font-size: clamp(12px, 0.3vw + 9px, 15px);
   line-height: 18px;
   white-space: nowrap;
   color: var(--text-secondary);
@@ -928,6 +947,9 @@ section.surface {
   width: 80px;
   height: 80px;
 }
+.band-brand h2 {
+  margin-bottom: var(--sm);
+}
 @media (max-width: 600px) {
   .band-brand {
     flex-direction: column;
@@ -955,7 +977,7 @@ section.surface {
 .site-footer {
   padding: 40px 0 56px;
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size: 0.88em;
 }
 .site-footer .wrap {
   display: grid;
@@ -971,6 +993,15 @@ section.surface {
     justify-self: end;
     text-align: right;
   }
+  .footer-nav {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sm) var(--lg);
 }
 .footer-brand {
   display: flex;

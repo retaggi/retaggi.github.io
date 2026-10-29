@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Palestrando · Sai sempre cosa fare in palestra</title>
+    <title>Palestrando · L'app per chi inizia in palestra</title>
     <meta
       name="description"
-      content="L'app di allenamento per chi inizia: la scheda pronta in un minuto, serie, ripetizioni e carico di ogni esercizio, e i pesi che salgono quando è il momento."
+      content="Palestrando è l'app per chi inizia in palestra: scheda di allenamento pronta in un minuto, serie, ripetizioni e carichi già scritti. Gratis, senza account."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://palestrando.it/" />
+    <link rel="alternate" hreflang="it" href="https://palestrando.it/" />
+    <link rel="alternate" hreflang="x-default" href="https://palestrando.it/" />
     <meta name="theme-color" content="#F3F4F2" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121820" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/assets/logo/palestrando-icona.svg" type="image/svg+xml" />
@@ -26,7 +29,88 @@
     <meta property="og:image" content="https://palestrando.it/assets/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Palestrando, l'app per chi inizia in palestra" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://palestrando.it/#website",
+            "url": "https://palestrando.it/",
+            "name": "Palestrando",
+            "alternateName": "palestrando.it",
+            "inLanguage": "it-IT",
+            "publisher": { "@id": "https://palestrando.it/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://palestrando.it/#organization",
+            "name": "Palestrando",
+            "url": "https://palestrando.it/",
+            "logo": "https://palestrando.it/assets/icons/palestrando-icona-512.png"
+          },
+          {
+            "@type": "MobileApplication",
+            "name": "Palestrando",
+            "description": "L'app di allenamento per chi inizia in palestra: la scheda pronta in un minuto, serie, ripetizioni e carico di ogni esercizio, e i pesi che salgono quando è il momento.",
+            "url": "https://palestrando.it/",
+            "image": "https://palestrando.it/assets/og.png",
+            "operatingSystem": "Android",
+            "applicationCategory": "HealthApplication",
+            "inLanguage": "it-IT",
+            "publisher": { "@id": "https://palestrando.it/#organization" },
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Come si inizia in palestra?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Con una scheda semplice e carichi adatti a te. Palestrando ti fa cinque domande (obiettivo, giorni, tempo, attrezzatura, orario) e prepara una scheda per chi parte da zero: in sala sai sempre quale esercizio fare, con quante serie, ripetizioni e kg."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quante volte a settimana allenarsi all'inizio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Due o tre volte a settimana bastano per partire bene. Scegli tu i giorni: la scheda si adatta, e ogni settimana vedi se hai raggiunto il tuo obiettivo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Che cos'è una scheda di allenamento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "È l'elenco degli esercizi di ogni allenamento, con serie, ripetizioni, carico e recupero. Se hai già quella dell'istruttore, fotografala: Palestrando la legge per te, carichi compresi."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quanto peso usare in palestra all'inizio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Un carico con cui completi tutte le ripetizioni con una buona tecnica. Poi ci pensa il coach di Palestrando: se fai tutte le serie, la volta dopo il peso sale; se hai faticato, si ripete."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Palestrando è gratis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sì: scheda, allenamenti, carichi che salgono da soli e guida a oltre 600 esercizi sono gratis, senza bisogno di un account. Alcune funzioni Premium sono in arrivo."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <link
       rel="preload"
       href="/assets/fonts/big-shoulders-display-800.woff2"
@@ -64,7 +148,7 @@
     <main id="contenuto">
       <section class="hero">
         <div class="hero-text">
-          <p class="eyebrow">L'app di allenamento per chi inizia</p>
+          <p class="eyebrow">L'app di allenamento per chi inizia in palestra</p>
           <h1>
             <span>Sai sempre</span> <span>cosa fare</span> <span>in palestra</span>
           </h1>
@@ -340,6 +424,57 @@
         </div>
       </section>
 
+      <section id="domande">
+        <div class="wrap split">
+          <div class="section-head">
+            <h2>Prime volte in palestra?</h2>
+            <p class="lead">
+              Le domande di chi inizia, con le risposte che trovi anche nell'app.
+            </p>
+          </div>
+          <div class="faq">
+            <article>
+              <h3>Come si inizia in palestra?</h3>
+              <p class="muted">
+                Con una scheda semplice e carichi adatti a te. Palestrando ti fa cinque domande
+                (obiettivo, giorni, tempo, attrezzatura, orario) e prepara una scheda per chi parte da
+                zero: in sala sai sempre quale esercizio fare, con quante serie, ripetizioni e kg.
+              </p>
+            </article>
+            <article>
+              <h3>Quante volte a settimana allenarsi all'inizio?</h3>
+              <p class="muted">
+                Due o tre volte a settimana bastano per partire bene. Scegli tu i giorni: la scheda si
+                adatta, e ogni settimana vedi se hai raggiunto il tuo obiettivo.
+              </p>
+            </article>
+            <article>
+              <h3>Che cos'è una scheda di allenamento?</h3>
+              <p class="muted">
+                È l'elenco degli esercizi di ogni allenamento, con serie, ripetizioni, carico e
+                recupero. Se hai già quella dell'istruttore, fotografala: Palestrando la legge per te,
+                carichi compresi.
+              </p>
+            </article>
+            <article>
+              <h3>Quanto peso usare in palestra all'inizio?</h3>
+              <p class="muted">
+                Un carico con cui completi tutte le ripetizioni con una buona tecnica. Poi ci pensa il
+                coach di Palestrando: se fai tutte le serie, la volta dopo il peso sale; se hai
+                faticato, si ripete.
+              </p>
+            </article>
+            <article>
+              <h3>Palestrando è gratis?</h3>
+              <p class="muted">
+                Sì: scheda, allenamenti, carichi che salgono da soli e guida a oltre 600 esercizi sono
+                gratis, senza bisogno di un account. Alcune funzioni Premium sono in arrivo.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="band">
         <div class="wrap">
           <div class="band-brand">
@@ -371,6 +506,11 @@
           <a href="/assets/fonts/OFL-big-shoulders-display.txt">Big Shoulders Display</a> e
           <a href="/assets/fonts/OFL-barlow.txt">Barlow</a> (SIL Open Font License).
         </p>
+        <nav class="footer-nav" aria-label="Informazioni">
+          <a href="/privacy/">Privacy</a>
+          <a href="/termini/">Termini d'uso</a>
+          <a href="/elimina-account/">Eliminare l'account o i dati</a>
+        </nav>
       </div>
     </footer>
   </body>
