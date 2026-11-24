@@ -596,12 +596,12 @@ p {
   font-size: 30px;
   color: var(--ink-text);
 }
-.coach {
+.why {
   font-size: 13px;
   color: var(--ink-text);
   text-align: center;
 }
-.coach strong {
+.why strong {
   color: var(--ink-success);
   font-weight: 600;
 }
