@@ -1160,3 +1160,20 @@ section.surface {
 .band .button {
   justify-self: start;
 }
+
+/* The official Google Play badge, never redrawn: only scaled, with its own black frame. */
+.play-badge {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 10px;
+}
+.play-badge img {
+  width: auto;
+  height: 64px;
+}
+.band .play-badge {
+  justify-self: start;
+}
+.narrow .play-badge {
+  justify-self: start;
+}
