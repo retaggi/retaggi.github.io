@@ -1,0 +1,28 @@
+# After every publish, tell Bing and the other IndexNow engines which pages exist,
+# so they recrawl them in minutes instead of days. The key file sits at the site root.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['.github/**']
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages to publish this commit
+        run: sleep 120
+      - name: Submit the sitemap URLs
+        env:
+          KEY: 85d6f54404f29b412ff177d6a4e8db7d
+        run: |
+          urls=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | grep -v '/assets/' | sed 's#</\?loc>##g')
+          urls="$urls https://palestrando.it/llms.txt"
+          json=$(printf '%s\n' $urls | jq -R . | jq -s --arg key "$KEY" '{host: "palestrando.it", key: $key, keyLocation: ("https://palestrando.it/" + $key + ".txt"), urlList: .}')
+          echo "$json"
+          code=$(curl -s -o response.txt -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$json")
+          echo "HTTP $code"; cat response.txt
+          case "$code" in 200|202) ;; *) exit 1 ;; esac
