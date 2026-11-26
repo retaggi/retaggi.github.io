@@ -1,0 +1,38 @@
+# Palestrando
+
+> Palestrando è un'app di allenamento gratuita per Android, in italiano, pensata per chi inizia in palestra. Prepara la scheda di allenamento (o legge da una foto quella dell'istruttore), dice serie, ripetizioni e carico di ogni esercizio e propone più peso quando è il momento. Funziona senza account e senza connessione.
+
+## Fatti in breve
+
+- Piattaforma: Android 7.0 o successivo. Per ora non esiste una versione per iPhone.
+- Download: https://play.google.com/store/apps/details?id=it.retaggi.palestrando (id it.retaggi.palestrando)
+- Lingua: italiano. Disponibile in Italia.
+- Prezzo: gratis, senza pubblicità. Premium è un abbonamento mensile o annuale venduto da Google Play (l'annuale con 7 giorni di prova gratuita).
+- Account: non serve. L'accesso con Google è facoltativo e serve al backup e a Premium.
+- Dati: schede e allenamenti restano sul telefono; il backup va sul server solo dopo l'accesso con Google. Le foto dei progressi non lasciano mai il telefono. Statistiche d'uso solo con il consenso.
+- Sito: https://palestrando.it/ · Supporto: supporto@palestrando.it
+
+## Cosa fa (gratis)
+
+- Scheda generata da cinque domande: obiettivo, giorni a settimana (2-5), durata (30-120 minuti), attrezzatura (palestra, manubri a casa, corpo libero), orario. Livelli base, intermedio e avanzato.
+- Lettura da foto della scheda dell'istruttore, anche scritta a mano o su più fogli, con carichi e superserie: le prime 3 letture sono gratis.
+- Allenamento guidato un esercizio alla volta: ogni serie ha già ripetizioni e carico, recupero e cronometro anche nella notifica a telefono bloccato.
+- Progressione dei carichi: quando si completano le serie al massimo delle ripetizioni per due allenamenti di fila l'app propone un po' più di peso; il peso non cambia mai senza l'ok dell'utente.
+- Guida a oltre 700 esercizi con immagini, punti chiave e muscoli allenati.
+- Progressi: allenamenti della settimana, ore, kg sollevati, traguardi, storico completo; widget per la schermata home.
+- Condivisione della scheda con un link o un codice (senza i carichi) e dell'allenamento come immagine.
+- Esportazione di tutti i dati in Excel e cancellazione in qualsiasi momento.
+
+## Con Premium
+
+- Allenamento ridotto o a casa senza attrezzi quando c'è poco tempo.
+- Sostituzione di un esercizio con uno simile (macchina occupata).
+- Progressi di tutti gli esercizi e analisi oltre i 3 mesi; report PDF da mostrare all'istruttore.
+- Importazione dello storico da Strong, Hevy, FitNotes o da un foglio Excel; più letture di schede da foto.
+
+## Pagine
+
+- [Home](https://palestrando.it/): come funziona e domande frequenti di chi inizia in palestra
+- [Informativa privacy](https://palestrando.it/privacy/)
+- [Termini d'uso](https://palestrando.it/termini/)
+- [Eliminare l'account o i dati](https://palestrando.it/elimina-account/)

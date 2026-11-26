@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Palestrando · L'app per chi inizia in palestra</title>
+    <title>Palestrando · App gratis per chi inizia in palestra, su Android</title>
     <meta
       name="description"
-      content="Palestrando è l'app per chi inizia in palestra: scheda di allenamento pronta in un minuto, serie, ripetizioni e carichi già scritti. Gratis, senza account."
+      content="Palestrando è l'app per chi inizia in palestra: scheda di allenamento pronta in un minuto o letta dalla foto di quella dell'istruttore, serie, ripetizioni e carichi già scritti. Gratis su Google Play, senza account."
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://palestrando.it/" />
@@ -31,6 +31,8 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Palestrando, l'app per chi inizia in palestra" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="google-play-app" content="app-id=it.retaggi.palestrando" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -42,14 +44,35 @@
             "name": "Palestrando",
             "alternateName": "palestrando.it",
             "inLanguage": "it-IT",
-            "publisher": { "@id": "https://palestrando.it/#organization" }
+            "publisher": {
+              "@id": "https://palestrando.it/#organization"
+            }
           },
           {
             "@type": "Organization",
             "@id": "https://palestrando.it/#organization",
             "name": "Palestrando",
             "url": "https://palestrando.it/",
-            "logo": "https://palestrando.it/assets/icons/palestrando-icona-512.png"
+            "logo": "https://palestrando.it/assets/icons/palestrando-icona-512.png",
+            "sameAs": [
+              "https://play.google.com/store/apps/details?id=it.retaggi.palestrando"
+            ],
+            "email": "supporto@palestrando.it"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://palestrando.it/#webpage",
+            "url": "https://palestrando.it/",
+            "name": "Palestrando · App gratis per chi inizia in palestra, su Android",
+            "inLanguage": "it-IT",
+            "isPartOf": {
+              "@id": "https://palestrando.it/#website"
+            },
+            "about": {
+              "@id": "https://palestrando.it/#app"
+            },
+            "primaryImageOfPage": "https://palestrando.it/assets/og.png",
+            "dateModified": "2026-11-26"
           },
           {
             "@type": "MobileApplication",
@@ -57,11 +80,51 @@
             "description": "L'app di allenamento per chi inizia in palestra: la scheda pronta in un minuto, serie, ripetizioni e carico di ogni esercizio, e quando aumentare il peso.",
             "url": "https://palestrando.it/",
             "image": "https://palestrando.it/assets/og.png",
-            "operatingSystem": "Android",
+            "operatingSystem": "Android 7.0 o successivo",
             "applicationCategory": "HealthApplication",
             "inLanguage": "it-IT",
-            "publisher": { "@id": "https://palestrando.it/#organization" },
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+            "publisher": {
+              "@id": "https://palestrando.it/#organization"
+            },
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Gratis",
+                "price": "0",
+                "priceCurrency": "EUR"
+              }
+            ],
+            "@id": "https://palestrando.it/#app",
+            "sameAs": [
+              "https://play.google.com/store/apps/details?id=it.retaggi.palestrando"
+            ],
+            "installUrl": "https://play.google.com/store/apps/details?id=it.retaggi.palestrando",
+            "downloadUrl": "https://play.google.com/store/apps/details?id=it.retaggi.palestrando",
+            "applicationSubCategory": "Allenamento in palestra",
+            "softwareVersion": "1.0.0",
+            "datePublished": "2026-11-26",
+            "countriesSupported": "IT",
+            "isAccessibleForFree": true,
+            "screenshot": [
+              "https://palestrando.it/assets/screens/oggi.webp",
+              "https://palestrando.it/assets/screens/foto-scheda.webp",
+              "https://palestrando.it/assets/screens/allenamento.webp",
+              "https://palestrando.it/assets/screens/progressi.webp",
+              "https://palestrando.it/assets/screens/forza.webp",
+              "https://palestrando.it/assets/screens/esercizi.webp"
+            ],
+            "featureList": [
+              "Scheda di allenamento generata in base a obiettivo, giorni, tempo e attrezzatura",
+              "Lettura della scheda dell'istruttore da foto",
+              "Serie, ripetizioni e carico di ogni esercizio",
+              "Proposta di aumentare il peso quando completi le serie",
+              "Guida a oltre 700 esercizi con immagini",
+              "Progressi, record e kg sollevati",
+              "Funziona senza account e senza connessione"
+            ],
+            "author": {
+              "@id": "https://palestrando.it/#organization"
+            }
           },
           {
             "@type": "FAQPage",
@@ -105,6 +168,30 @@
                   "@type": "Answer",
                   "text": "Sì: scheda, allenamenti, progressione dei carichi e guida a oltre 700 esercizi sono gratis, senza bisogno di un account. Alcune funzioni fanno parte di Premium, in abbonamento."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "Dove si scarica Palestrando?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Su Google Play, gratis: cerca \"Palestrando\" oppure apri play.google.com/store/apps/details?id=it.retaggi.palestrando. Funziona su Android 7 o successivo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Palestrando c'è anche per iPhone?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Per ora Palestrando è solo per Android. La versione per iPhone arriverà più avanti."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Palestrando legge la scheda del mio istruttore?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sì. Fotografa la scheda, anche scritta a mano o su più fogli: Palestrando riconosce esercizi, serie, ripetizioni, carichi e superserie e la trasforma in allenamenti pronti. Le prime 3 letture sono gratis."
+                }
               }
             ]
           }
@@ -139,9 +226,9 @@
           />
         </picture>
       </a>
-      <a class="pill-action" href="#come-funziona">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg>
-        Come funziona
+      <a class="pill-action" href="https://play.google.com/store/apps/details?id=it.retaggi.palestrando&amp;referrer=utm_source%3Dpalestrando.it%26utm_medium%3Dsito%26utm_campaign%3Dheader">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l9.3-9.7z"/><path d="M17.1 15.3l-3.2-3.3 3.2-3.3 3.7 2.1c1 .6 1 1.8 0 2.4z"/><path d="M16.3 8.2L5.5 2.1c-.3-.2-.6-.2-.9-.1l9.3 9.7z" opacity=".75"/><path d="M13.9 12.3l-9.3 9.7c.3.1.6.1.9-.1l10.8-6.1z" opacity=".75"/></svg>
+        Scarica l'app
       </a>
     </header>
 
@@ -157,8 +244,11 @@
             ripetizioni e carico di ogni esercizio e ti propone più peso quando è il momento.
           </p>
           <div class="hero-actions">
-            <a class="button" href="#come-funziona">Scopri come funziona</a>
-            <p class="hero-note">Presto su Google Play.<br />Gratis, senza bisogno di un account.</p>
+            <a class="button" href="https://play.google.com/store/apps/details?id=it.retaggi.palestrando&amp;referrer=utm_source%3Dpalestrando.it%26utm_medium%3Dsito%26utm_campaign%3Dhero">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l9.3-9.7z"/><path d="M17.1 15.3l-3.2-3.3 3.2-3.3 3.7 2.1c1 .6 1 1.8 0 2.4z"/><path d="M16.3 8.2L5.5 2.1c-.3-.2-.6-.2-.9-.1l9.3 9.7z" opacity=".75"/><path d="M13.9 12.3l-9.3 9.7c.3.1.6.1.9-.1l10.8-6.1z" opacity=".75"/></svg>
+              Scarica da Google Play
+            </a>
+            <p class="hero-note">Gratis per Android 7 o successivo.<br />Senza bisogno di un account.</p>
           </div>
         </div>
 
@@ -248,6 +338,35 @@
             </li>
           </ol>
         </div>
+      </section>
+
+      <section class="screens-section" aria-labelledby="schermate">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="schermate">Com'è fatta</h2>
+            <p class="lead">Le schermate che vedi in sala, prima e dopo l'allenamento.</p>
+          </div>
+        </div>
+        <ul class="screens">
+            <li>
+              <img src="/assets/screens/oggi.webp" width="540" height="960" loading="lazy" decoding="async" alt="La schermata Oggi: il prossimo allenamento con gli esercizi e il pulsante Inizia allenamento" />
+            </li>
+            <li>
+              <img src="/assets/screens/foto-scheda.webp" width="540" height="960" loading="lazy" decoding="async" alt="La scheda dell'istruttore fotografata e trasformata in allenamenti" />
+            </li>
+            <li>
+              <img src="/assets/screens/allenamento.webp" width="540" height="960" loading="lazy" decoding="async" alt="Un esercizio in allenamento con serie, ripetizioni, carico e la proposta di aumentare il peso" />
+            </li>
+            <li>
+              <img src="/assets/screens/progressi.webp" width="540" height="960" loading="lazy" decoding="async" alt="I progressi: allenamenti della settimana, ore, kg sollevati e serie degli ultimi tre mesi" />
+            </li>
+            <li>
+              <img src="/assets/screens/forza.webp" width="540" height="960" loading="lazy" decoding="async" alt="Quanto sei più forte di quando hai iniziato, esercizio per esercizio" />
+            </li>
+            <li>
+              <img src="/assets/screens/esercizi.webp" width="540" height="960" loading="lazy" decoding="async" alt="La guida agli esercizi divisi per muscolo, con immagine e difficoltà" />
+            </li>
+        </ul>
       </section>
 
       <section class="surface">
@@ -465,6 +584,24 @@
               </p>
             </article>
             <article>
+              <h3>Dove si scarica Palestrando?</h3>
+              <p class="muted">
+                Su Google Play, gratis: cerca "Palestrando" oppure apri la pagina di <a href="https://play.google.com/store/apps/details?id=it.retaggi.palestrando">Google Play</a>. Funziona su Android 7 o successivo.
+              </p>
+            </article>
+            <article>
+              <h3>Palestrando c'è anche per iPhone?</h3>
+              <p class="muted">
+                Per ora Palestrando è solo per Android. La versione per iPhone arriverà più avanti.
+              </p>
+            </article>
+            <article>
+              <h3>Palestrando legge la scheda del mio istruttore?</h3>
+              <p class="muted">
+                Sì. Fotografa la scheda, anche scritta a mano o su più fogli: Palestrando riconosce esercizi, serie, ripetizioni, carichi e superserie e la trasforma in allenamenti pronti. Le prime 3 letture sono gratis.
+              </p>
+            </article>
+            <article>
               <h3>Palestrando è gratis?</h3>
               <p class="muted">
                 Sì: scheda, allenamenti, progressione dei carichi e guida a oltre 700 esercizi sono
@@ -480,17 +617,17 @@
           <div class="band-brand">
             <img src="/assets/logo/palestrando-icona.svg" alt="" width="64" height="64" />
             <div>
-              <h2>Presto su Google Play</h2>
+              <h2>Scarica Palestrando</h2>
               <p class="muted">
-                Gratis per iniziare: scheda, allenamenti, progressione dei carichi e guida agli
-                esercizi.
+                Gratis su Google Play: scheda, allenamenti, progressione dei carichi e guida agli
+                esercizi. Per Android 7 o successivo.
               </p>
             </div>
           </div>
-          <span class="store">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/></svg>
-            In arrivo per Android
-          </span>
+          <a class="button" href="https://play.google.com/store/apps/details?id=it.retaggi.palestrando&amp;referrer=utm_source%3Dpalestrando.it%26utm_medium%3Dsito%26utm_campaign%3Dfondo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l9.3-9.7z"/><path d="M17.1 15.3l-3.2-3.3 3.2-3.3 3.7 2.1c1 .6 1 1.8 0 2.4z"/><path d="M16.3 8.2L5.5 2.1c-.3-.2-.6-.2-.9-.1l9.3 9.7z" opacity=".75"/><path d="M13.9 12.3l-9.3 9.7c.3.1.6.1.9-.1l10.8-6.1z" opacity=".75"/></svg>
+            Scarica da Google Play
+          </a>
         </div>
       </section>
     </main>
@@ -510,6 +647,7 @@
           <a href="/privacy/">Privacy</a>
           <a href="/termini/">Termini d'uso</a>
           <a href="/elimina-account/">Eliminare l'account o i dati</a>
+          <a href="https://play.google.com/store/apps/details?id=it.retaggi.palestrando">Palestrando su Google Play</a>
         </nav>
       </div>
     </footer>
