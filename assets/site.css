@@ -1120,43 +1120,6 @@ section.surface {
   font-size: 15px;
 }
 
-/* --- Screenshots: the store images in a strip that scrolls sideways on phones ------------- */
-
-.screens-section {
-  padding-bottom: 0;
-}
-.screens {
-  display: flex;
-  gap: var(--md);
-  margin: var(--lg) 0 0;
-  padding: 0 var(--gutter) var(--lg);
-  list-style: none;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0 var(--gutter);
-  overscroll-behavior-x: contain;
-}
-.screens li {
-  flex: 0 0 auto;
-  width: clamp(200px, 58vw, 260px);
-  scroll-snap-align: start;
-}
-.screens img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-}
-@media (min-width: 1400px) {
-  .screens {
-    overflow-x: visible;
-  }
-  .screens li {
-    flex: 1 1 0;
-    width: auto;
-  }
-}
 .band .button {
   justify-self: start;
 }
